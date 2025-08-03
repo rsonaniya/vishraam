@@ -46,6 +46,7 @@ const SignIn = () => {
           type="email"
           className="border rounded w-full py-1 px-2 font-normal"
           {...register("email", { required: "Email is required" })}
+          placeholder="Enter Your Email..."
         />
         {errors.email && (
           <span className="text-red-500">{errors.email.message}</span>
@@ -63,6 +64,7 @@ const SignIn = () => {
               message: "Password of at least 6 Character is required",
             },
           })}
+          placeholder="******"
         />
         {errors.password && (
           <span className="text-red-500">{errors.password.message}</span>

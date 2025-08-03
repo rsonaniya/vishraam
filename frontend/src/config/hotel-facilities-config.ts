@@ -1,0 +1,18 @@
+export const hotelFacilities = [
+  "Free Wi-Fi",
+  "Parking",
+  "Swimming Pool",
+  "Gym/Fitness Center",
+  "Spa/Wellness Center",
+  "Restaurant",
+  "Bar/Lounge",
+  "Room Service",
+  "Conference Rooms",
+  "Business Center",
+  "Laundry Service",
+  "Airport Shuttle",
+  "Pet-Friendly",
+  "Family-Friendly",
+  "24-Hour Front Desk",
+  "Concierge Service",
+];
