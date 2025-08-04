@@ -3,8 +3,8 @@ import type { SignInFormData } from "./pages/SignIn";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
 
-export const register = async (formData: RegisterFormData) => {
-  const response = await fetch(`${API_BASE_URL}/api/users/register`, {
+export const sendRegisterOtp = async (formData: RegisterFormData) => {
+  const response = await fetch(`${API_BASE_URL}/api/users/request-otp`, {
     method: "POST",
     credentials: "include",
     headers: {
@@ -15,6 +15,23 @@ export const register = async (formData: RegisterFormData) => {
 
   const responseBody = await response.json();
   if (!response.ok) throw new Error(responseBody.message);
+  return responseBody;
+};
+
+export const verifyRegisterOtp = async (formData: RegisterFormData) => {
+  const { email, otp } = formData;
+  const response = await fetch(`${API_BASE_URL}/api/users/verify-otp`, {
+    method: "POST",
+    credentials: "include",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ email, otp }),
+  });
+
+  const responseBody = await response.json();
+  if (!response.ok) throw new Error(responseBody.message);
+  return responseBody;
 };
 
 export const validateToken = async () => {
