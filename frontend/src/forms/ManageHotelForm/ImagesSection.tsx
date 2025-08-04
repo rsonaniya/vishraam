@@ -49,7 +49,9 @@ const ImagesSection = () => {
           accept="image/*"
           {...register("imageFiles", {
             validate: (files: FileList) => {
-              const totalLength = files.length + existingImageUrls?.length || 0;
+              const totalLength =
+                files.length + (existingImageUrls?.length || 0);
+              console.log(totalLength, " totalLength");
               if (totalLength < 1 || totalLength > 6) {
                 return "Number of images should be between 1-6";
               }
