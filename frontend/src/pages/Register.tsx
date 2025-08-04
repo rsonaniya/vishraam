@@ -34,7 +34,7 @@ const Register = () => {
       // await queryClient.invalidateQueries("validateToken");
       showToast({ message: data.message, type: "SUCCESS" });
       setIsOtpSent(true);
-      setResendTimer(10);
+      setResendTimer(60);
       setFocus("otp");
       // navigate("/");
     },
