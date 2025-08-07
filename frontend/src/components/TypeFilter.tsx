@@ -1,0 +1,30 @@
+import { hotelTypes } from "../config/hotel-options-config";
+
+type Props = {
+  selectedHotelTypes: string[];
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+};
+const TypeFilter = ({ onChange, selectedHotelTypes }: Props) => {
+  return (
+    <div className="border-b border-slate-500 pb-5">
+      <h4 className="text-md font-semibold mb-2">Hotel Type</h4>
+      {hotelTypes.map((hotelType) => (
+        <label
+          key={hotelType}
+          className="flex items-center space-x-2 cursor-pointer"
+        >
+          <input
+            type="checkbox"
+            className="rounded"
+            value={hotelType}
+            checked={selectedHotelTypes.includes(hotelType)}
+            onChange={onChange}
+          />
+          <span>{hotelType}</span>
+        </label>
+      ))}
+    </div>
+  );
+};
+
+export default TypeFilter;
