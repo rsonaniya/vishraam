@@ -4,4 +4,7 @@
   .container {
     @apply px-[var(--container-padding,2rem)] md:px-[var(--container-padding,5rem)];
   }
+   button:not(:disabled) {
+    @apply cursor-pointer;
+  }
 }

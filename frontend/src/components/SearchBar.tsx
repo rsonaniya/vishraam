@@ -92,7 +92,7 @@ const SearchBar = () => {
           selectsEnd
           startDate={checkIn}
           endDate={checkOut}
-          minDate={minDate}
+          minDate={checkIn}
           maxDate={maxDate}
           placeholderText="Check-in Date"
           className="min-w-full bg-white p-2 focus:outline-none"
@@ -100,10 +100,10 @@ const SearchBar = () => {
         />
       </div>
       <div className="flex gap-2">
-        <button className="w-2/3 bg-blue-600 text-white h-full p-2 font-bold text-xl hover:bg-blue-500 cursor-pointer">
+        <button className="w-3/5 bg-blue-600 text-white h-full p-2 font-bold text-xl hover:bg-blue-500 cursor-pointer">
           Search
         </button>
-        <button className="w-1/3 bg-red-600 text-white h-full p-2 font-bold text-xl hover:bg-red-500 cursor-pointer">
+        <button className="w-2/5 bg-red-600 text-white h-full p-2 font-bold text-xl hover:bg-red-500 cursor-pointer">
           Clear
         </button>
       </div>
